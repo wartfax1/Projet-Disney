@@ -1,0 +1,786 @@
+/* --- Styles généraux --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; 
+    color: white; 
+    background-color: #040714; 
+    min-height: 100vh; 
+    position: relative; 
+}
+
+/* --- Section Page d'Accueil avec Image de Fond --- */
+.page-accueil {
+    background-image: url(img/original_2.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply; 
+}
+
+/* --- Header et Bouton S'IDENTIFIER --- */
+.header-identification {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px; 
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    z-index: 10;
+}
+
+.btn-identification {
+    padding: 8px 20px; 
+    border: 1px solid white; 
+    border-radius: 4px;
+    color: white; 
+    background-color: black; 
+    text-decoration: none;
+    font-weight: 700; 
+    font-size: 13px;
+    letter-spacing: 1px; 
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-identification:hover {
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
+    border-color: white; 
+}
+
+/* --- Section principale et Texte --- */
+.contenu-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    position: relative; 
+    padding: 0 20px;
+}
+
+.message-central {
+    max-width: 1200px; 
+    padding: 20px;
+    margin-top: 15%;
+}
+
+h1 {
+    font-size: 2rem; 
+    line-height: 1.2; 
+    margin: 0 0 20px 0; 
+    font-weight: 700;
+}
+
+.slogan {
+    font-size: 1.1rem; 
+    font-weight: 400;
+    margin-bottom: 25px; 
+}
+
+.instruction {
+    font-size: 1rem; 
+    color: rgba(255, 255, 255, 0.8); 
+    margin-bottom: 20px;
+}
+
+/* --- Formulaire et Alignement --- */
+.formulaire-email {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 500px; 
+    border-radius: 4px; 
+    overflow: hidden; 
+    gap: 10px;
+}
+
+#email-address {
+    flex-grow: 1; 
+    padding: 15px; 
+    font-size: 16px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: white;
+    border-radius: 4px; 
+}
+
+#email-address::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-inscription {
+    padding: 15px 25px; 
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(0, 0, 0); 
+    background-color: #05d6e8; 
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-inscription:hover {
+    background-color: #02D6E8; 
+}
+
+/* --- Texte d'offre et Notes de bas de page (Textes grisés) --- */
+.offre-speciale {
+    font-size: 12px; 
+    color: rgba(255, 255, 255, 0.6); 
+    margin-top: 25px; 
+    margin-bottom: 10px;
+}
+
+.notes-bas-de-page {
+    margin-top: 15px; 
+    font-size: 11px; 
+    color: rgba(255, 255, 255, 0.5); 
+}
+
+.notes-bas-de-page p {
+    font-size: 11px;
+    margin: 3px 0;
+}
+
+/* --- Flèche de défilement --- */
+.scroll-down {
+    position: absolute;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 2; 
+}
+
+.arrow-down {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.arrow-image {
+    width: 40px; /* Ajustez selon vos besoins */
+    height: 40px;
+    display: block;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1); /* Transforme le noir en blanc */
+}
+
+.arrow-down:hover .arrow-image {
+    transform: translateY(5px) scale(1.1);
+    filter: brightness(0) invert(1) opacity(0.8); /* Blanc avec opacité réduite au hover */
+}
+
+/* Animation de rebond */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.arrow-down .arrow-image {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* --- SECTION SECONDAIRE "SEULEMENT SUR DISNEY+" --- */
+.disney {
+    background-image: url(img/original_4.jpeg); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start; 
+    padding: 100px 20px 20px 20px;
+    position: relative;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: multiply;
+}
+
+.disney > div {
+    max-width: 400px; 
+    padding: 0;
+    text-align: left;
+}
+
+.disney h2 {
+    font-size: 2rem; 
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.disney p {
+    font-size: 0.95rem; 
+    line-height: 1.5;
+    margin-bottom: 15px; 
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- SECTION ABONNEMENT --- */
+.Abonnement {
+    background-color: #040714;
+    color: #fff;
+    padding: 60px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.abonnement-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.Abonnement h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* ---- TABLEAU D'ABONNEMENT ----*/
+.table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+    text-align: center;
+    min-width: 600px;
+}
+
+thead th {
+    padding: 15px 10px;
+    border-bottom: 2px solid #333;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+tbody td {
+    padding: 15px 10px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+tbody td:first-child {
+    text-align: left;
+    font-weight: 400;
+    color: #ccc;
+}
+
+table th.premium-col,
+table td:nth-child(4) {
+    background-color: #1a1e23;
+}
+
+.price-row td {
+    font-size: 1em;
+    font-weight: 600;
+    padding: 20px 10px;
+}
+
+.feature-check {
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* --- NOTES SOUS LE TABLEAU --- */
+.notes {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.note-simple {
+    font-size: 0.9em;
+    color: #AAA;
+    margin-bottom: 15px;
+}
+
+.note-detail {
+    font-size: 0.75em;
+    line-height: 1.4;
+    color: #777;
+}
+
+.note-detail a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* --- SECTION ADS --- */
+.ADS {
+    background-color: #040714;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.ADS h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.ADS > p {
+    font-size: 1.1rem;
+    color: #CCC;
+    margin: 0 auto 40px auto;
+    max-width: 600px;
+}
+
+.benefits-row {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    text-align: center;
+}
+
+.benefit-item img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.benefit-item p:first-of-type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.benefit-item .detail {
+    font-size: 0.9rem;
+    color: #AAA;
+    line-height: 1.4;
+}
+
+/* --- SECTION FAQ --- */
+.FAQ {
+    background-color: #040714;
+    color: #c0c0c0;
+    font-family: "Inspire", sans-serif;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.FAQ h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 40px 0;
+}
+
+.faq-liste {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.FAQ details {
+    margin-bottom: 15px;
+    background-color: #13151D;
+    border-radius: 4px;
+    border: none;
+    padding: 0 20px;
+    overflow: hidden;
+    text-align: left;
+}
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #c0c0c0;
+    cursor: pointer;
+    padding: 20px 0;
+    list-style: none;
+    user-select: none;
+    outline: none;
+    transition: color 0.2s ease;
+}
+
+summary::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: 300;
+    color: #c0c0c0;
+    line-height: 1;
+    margin-left: 15px;
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+
+details[open] summary::after {
+    content: '−';
+    color: white;
+}
+
+.reponse-contenu {
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #c0c0c0;
+    text-align: left;
+}
+
+.reponse-contenu p, 
+.reponse-contenu ul,
+.reponse-contenu ol {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.reponse-contenu ul, 
+.reponse-contenu ol {
+    list-style-position: outside;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.reponse-contenu li {
+    padding-bottom: 8px;
+    margin-left: 0;
+}
+
+.reponse-contenu a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid #ffffff;
+    transition: border-color 0.2s ease;
+}
+
+.reponse-contenu a:hover {
+    border-bottom-color: transparent;
+}
+
+/* --- SECTION APPAREILS --- */
+.appareils {
+    background-color: #040714;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.appareils h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.appareils-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.appareil-item {
+    text-align: center;
+}
+
+.appareil-icon {
+    width: 120px;
+    height: auto;
+    margin: 0 auto 20px auto;
+}
+
+.appareil-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+.liste-appareils {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.liste-appareils li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #AAA;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #040714;
+    color: #AAA;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    width: 80px;
+    height: auto;
+}
+
+.footer-links-row {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.footer-links-row li {
+    padding: 0 12px;
+}
+
+.footer-links-row a {
+    color: #AAA;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links-row a:hover {
+    color: white;
+}
+
+.language-selector {
+    position: relative;
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white !important;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.language-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    filter: invert(1);
+}
+
+.language-arrow {
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+    filter: invert(1);
+    transition: transform 0.3s ease;
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #040714;
+    border: 1px solid #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 120px;
+    z-index: 100;
+}
+
+.language-dropdown li {
+    padding: 8px 12px;
+}
+
+.language-dropdown li a {
+    color: #AAA;
+    text-decoration: none;
+}
+
+.language-dropdown li a:hover {
+    color: white;
+}
+
+.language-selector:hover .language-dropdown {
+    display: block;
+}
+
+.footer-note,
+.footer-copyright {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablettes (768px et plus) */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .formulaire-email {
+        flex-direction: row;
+    }
+    
+    #email-address {
+        border-radius: 4px 0 0 4px;
+    }
+    
+    .btn-inscription {
+        border-radius: 0 4px 4px 0;
+    }
+    
+    .benefits-row {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .appareils-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-links-row {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* Ordinateurs (1024px et plus) */
+@media (min-width: 1024px) {
+    .header-identification {
+        padding: 15px 30px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .message-central {
+        margin-top: 10%;
+    }
+    
+    .disney {
+        padding-top: 150px;
+        padding-left: 5%;
+    }
+    
+    .appareils-row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .faq-liste {
+        padding: 0 40px;
+    }
+    
+    .FAQ details {
+        padding: 0 30px;
+    }
+    
+    summary {
+        font-size: 18px;
+        padding: 25px 0;
+    }
+    
+    .reponse-contenu {
+        font-size: 18px;
+        padding: 25px 0;
+    }
+}
+
+/* Grands écrans (1200px et plus) */
+@media (min-width: 1200px) {
+    .contenu-principal {
+        padding: 0;
+    }
+    
+    .benefits-row {
+        gap: 40px;
+        padding: 0 40px;
+    }
+    
+    .appareils-row {
+        padding: 0 20px;
+    }
+}
+
+/* Très petits mobiles (480px et moins) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .slogan {
+        font-size: 1rem;
+    }
+    
+    .instruction {
+        font-size: 0.9rem;
+    }
+    
+    .Abonnement h2,
+    .ADS h3,
+    .FAQ h4,
+    .appareils h2 {
+        font-size: 1.8rem;
+    }
+    
+    .disney h2 {
+        font-size: 1.8rem;
+    }
+    
+    .footer-links-row li {
+        padding: 5px 0;
+    }
+    
+    .language-toggle {
+        font-size: 13px;
+    }
+}
